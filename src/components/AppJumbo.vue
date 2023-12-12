@@ -3,14 +3,13 @@ export default {
     data() {
         return {
             sponsors: [
-                { path: '../assets/img/client-logo-01.png' },
-                { path: '../assets/img/client-logo-02.png' },
-                { path: '../assets/img/client-logo-03.png' },
-                { path: '../assets/img/client-logo-04.png' },
-                { path: '../assets/img/client-logo-05.png' },
-                { path: '../assets/img/client-logo-06.png' },
-                { path: '../assets/img/client-logo-07.png' },
-                { path: '../assets/img/client-logo-08.png' },
+                { path: 'src/assets/img/client-logo-01.png' },
+                { path: 'src/assets/img/client-logo-02.png' },
+                { path: 'src/assets/img/client-logo-03.png' },
+                { path: 'src/assets/img/client-logo-04.png' },
+                { path: 'src/assets/img/client-logo-05.png' },
+                { path: 'src/assets/img/client-logo-06.png' },
+                { path: 'src/assets/img/client-logo-07.png' },
             ]
         }
     }
@@ -44,10 +43,11 @@ export default {
 
         <img src="../assets/img/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg" alt="jumbo-img">
     </div>
-
-    <div v-for="sponsor in  sponsors " class="sponsors">
-        <img :src="sponsor.path" alt="img">
-    </div>
+    <section>
+        <div v-for="sponsor in  sponsors " class="sponsors">
+            <img :src="sponsor.path" alt="img">
+        </div>
+    </section>
 </template>
 
 <style scoped lang="scss">
@@ -116,5 +116,16 @@ p,
 .sponsors>img:hover {
     filter: brightness(50%);
     transition-duration: 0.3s;
+}
+
+.sponsors {
+    margin: 0px 30px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 120px;
 }
 </style>
