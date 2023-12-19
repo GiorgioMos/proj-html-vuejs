@@ -1,8 +1,10 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppJumbo from './components/AppJumbo.vue';
-import AppFooter from './components/AppFooter.vue';
 import AppCards from './components/AppCards.vue';
+import AppPrograms from './components/AppPrograms.vue';
+import AppCarousel from './components/AppCarousel.vue';
+import AppFooter from './components/AppFooter.vue';
 
 
 export default {
@@ -10,8 +12,9 @@ export default {
         AppHeader,
         AppJumbo,
         AppCards,
+        AppPrograms,
+        AppCarousel,
         AppFooter,
-
     },
     data() {
         return {
@@ -25,6 +28,8 @@ export default {
     <AppHeader />
     <AppJumbo />
     <AppCards />
+    <AppPrograms />
+    <AppCarousel />
     <AppFooter />
 </template>
 
