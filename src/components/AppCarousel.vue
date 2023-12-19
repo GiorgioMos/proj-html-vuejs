@@ -1,65 +1,82 @@
 <script setup>
-import 'swiper/css'; // Import Swiper styles
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 import 'swiper/css/pagination';
-import Swiper, { Pagination } from 'swiper'; // Import Swiper core and required modules
+import { Pagination } from 'swiper/modules';
 
 const pagination = {
     clickable: true,
+    renderBullet: function (index, className) {
+        return '<span class="' + className + '"></span>';
+    },
 };
 
 const modules = [Pagination];
-
-// Initialize Swiper when the component is mounted
-onMounted(() => {
-    const mySwiper = new Swiper('.mySwiper', {
-        pagination,
-        modules,
-    });
-});
-
-// Destroy Swiper instance when the component is unmounted
-onUnmounted(() => {
-    const mySwiper = document.querySelector('.mySwiper');
-    if (mySwiper && mySwiper.swiper) {
-        mySwiper.swiper.destroy();
-    }
-});
 </script>
 
 <template>
-    <swiper class="mySwiper">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <swiper-slide>Slide 7</swiper-slide>
-        <swiper-slide>Slide 8</swiper-slide>
-        <swiper-slide>Slide 9</swiper-slide>
-    </swiper>
+    <Swiper :pagination="pagination" :modules="modules" class="mySwiper">
+        <SwiperSlide>
+            <h2>High level of efficiency and scientific teaching methods</h2>
+            <p>I am free to learn at my own pace, follow my own schedule and choose the subject i want</p>
+            <div>
+                <img src="../assets/img/testimonial-avata-02.jpg" alt="testimonial">
+                <h5>MINA HOLLACE</h5>
+                <p>/ Freelancer</p>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <h2>High level of efficiency and scientific teaching methods</h2>
+            <p>I am free to learn at my own pace, follow my own schedule and choose the subject i want</p>
+            <div>
+                <img src="../assets/img/testimonial-avata-04.jpg" alt="testimonial">
+                <h5>MADLEY PONDOR</h5>
+                <p>/ IT specialist</p>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <h2>High level of efficiency and scientific teaching methods</h2>
+            <p>I am free to learn at my own pace, follow my own schedule and choose the subject i want</p>
+            <div>
+                <img src="../assets/img/testimonial-avata-01.jpg" alt="testimonial">
+                <h5>LUVIC DUBBLE</h5>
+                <p>/ Private Tutor</p>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <h2>High level of efficiency and scientific teaching methods</h2>
+            <p>I am free to learn at my own pace, follow my own schedule and choose the subject i want</p>
+            <div class="card-container">
+                <img src="../assets/img/testimonial-avata-03.jpg" alt="testimonial">
+                <h5>FLORENCE THEMES</h5>
+                <p>/ Multimedia Admin</p>
+            </div>
+        </SwiperSlide>
+    </Swiper>
 </template>
 
 <style scoped lang="scss">
 .mySwiper {
     width: 100%;
-    height: 100%;
+    height: 600px;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .swiper-pagination-bullet {
@@ -69,6 +86,6 @@ onUnmounted(() => {
 }
 
 .swiper-pagination-bullet-active {
-    background: #007aff;
+    color: #20AD96;
 }
 </style>
